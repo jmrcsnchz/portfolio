@@ -6,6 +6,21 @@
     box-sizing: border-box;
     z-index: 1;
 }
+label,
+button,
+textarea,
+input,
+select,
+a{
+ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ -webkit-tap-highlight-color: transparent;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+  user-select: none;
+
+}
 html {
     scroll-behavior: smooth;
 }
@@ -20,11 +35,18 @@ body {
 
 }
 h1 {
+    color:white;
     font-family: 'Proza Libre', sans-serif;
+    text-align: center;
+    font-size:300%;
+    margin-bottom:30px;
 }
 a {
     text-decoration: none;
     color:#3f72d1
+}
+section {
+    padding: 15vh 0vh 0vh 0vh;
 }
 nav {
     position: fixed;
@@ -56,6 +78,7 @@ nav ul li a {
     text-transform: uppercase;
     padding: 10px 10px;
     transition: 0.3s;
+    
 }
 nav ul li a.active, nav ul li a:hover{
     background-color: white;
@@ -65,7 +88,7 @@ nav ul li a.active, nav ul li a:hover{
     font-size: 30px;
     float:right;
     line-height: 80px;
-    margin-right: 40px;
+    margin-right: 30px;
     cursor: pointer;
     display:none;
 }
@@ -88,6 +111,158 @@ nav ul li a.active, nav ul li a:hover{
     }
 }
 
+#whoami{
+    color:white;
+    margin: 20vh 0px 0px 50px;
+    height: 80vh;
+}
+#whoami p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 10vw;
+}
+#whoami #eme{
+    margin: 0px 0px 0px 5%;
+    font-size:2vw;
+}
+
+#about {
+    margin:20vh 0 0 0;
+    padding:50px;
+    width: 100%;
+    background-color:#232323;
+    color:white;
+    padding: 20vh 10vh;
+    min-height:100vh;
+}
+#about p {
+    padding: 5px 0px;
+    font-size: 120%;
+    margin:0 !important;
+    text-indent: 2em;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+#about p img {
+    float:left;
+    width:300px;
+    margin-right: 30px;
+}
+
+#knowledge {
+    min-height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url('img/bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#knowledge .content {
+    margin-top:100px;
+    width: 30vw; 
+    transform: scale(1.4);
+    text-align: left;
+    overflow: hidden; /* add this to contain floated children */
+    
+}
+#knowledge .content p {
+    color:white;
+    font-size: 1.2em;
+}
+#knowledge .content ul:nth-child(1) {
+    width: 50%;
+    float:left;
+}
+#knowledge .content ul:nth-child(2) {
+    width: 50%;
+    float:right;
+}
+#knowledge .content ul li {
+    margin-bottom: 20px;
+}
+
+progress {
+    border-radius: 7px; 
+    height: 10px;
+    width: 90%;
+  }
+  progress::-webkit-progress-bar {
+    border-radius: 7px;
+    background-color: whitesmoke;
+    border-radius: 7px;
+  }
+  progress::-webkit-progress-value {
+    border-radius: 7px;
+    background-color: #19a3b3;
+    border-radius: 7px;
+  }
+
+#contact {
+    min-height: 120vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url('img/contact.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#contact .form-contain {
+    padding: 20px;
+    background:rgb(30,30,40);
+    width: 60%;
+    text-align: center;
+    margin:auto;
+    color:white;
+}
+#contact .form-contain form {
+    text-align: center;
+    color:white;
+}
+#contact .form-contain form input[type=text],#contact .form-contain form input[type=email]{
+    color:white;
+    font-size: 120%;
+    height: 50px;
+    width:90%;
+    display: block;
+    margin:20px auto;
+    background-color: transparent;
+    border:2px solid #CC6666;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#contact .form-contain form textarea {
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 150%;
+    height: 200px;
+    color:white;
+    width:90%;
+    border:2px solid #CC6666;
+    background-color: transparent;
+}
+input[type=submit]{
+    color:rgb(30,30,40);
+    font-size: 120%;
+    height: 50px;
+    width:90%;
+    display: block;
+    margin:20px auto;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #CC6666;
+    transition: 0.3s;
+}
+input,textarea:focus {
+    outline:none;
+}
+input[type="submit"]:hover{
+    color:white;
+    background-color: #7a3838;
+}
+/*TABLETS ====================================== */
 @media (max-width: 779px){
     .checkbtn {
         display: block;
@@ -117,7 +292,7 @@ nav ul li a.active, nav ul li a:hover{
         color:gray;
     }
     #check:checked ~ ul {
-        right: -5%;
+        right: -8%;
     }
     label.logo{
         font-size:25px;
@@ -125,30 +300,9 @@ nav ul li a.active, nav ul li a:hover{
     #whoami #eme{
         font-size:5vw;
     }
-}
-
-#whoami{
-    color:white;
-    margin: 29vh 0px 0px 50px;
-    height: 80vh;
-}
-#whoami p {
-    font-family: 'Rubik', sans-serif;
-    font-size: 10vw;
-}
-#whoami #eme{
-    margin: 0px 0px 0px 5%;
-    font-size:2vw;
-}
-
-@media (max-width: 565px){
-    #whoami #eme{
-        margin: 0px 0px 0px 5%;
-        font-size:4vw;
-    }
     #about {
         margin:0 !important;
-        padding:15vh 20px 20px 20px !important;
+        padding:15vh 5% 100px 5% !important;
         height:auto !important;
     }
     #about p{
@@ -157,32 +311,51 @@ nav ul li a.active, nav ul li a:hover{
     #about p img {
         display:none;
     }
+    #knowledge {
+        padding: 15vh 25px 30vh 25px;
+    }
+    #knowledge .content {
+        margin-top: 20vh;
+        width: 30vw;
+    }
+    #knowledge .content ul p{
+        margin: 0 !important;
+        font-size:60%;
+    }
+    #knowledge .content ul:nth-child(1) {
+        float:none;
+    }
+    #knowledge .content ul:nth-child(2) {
+        float:none; 
+    }
+    progress {
+        width: 200%;
+      }
+}
+/*TABLETS END ====================================== */
+/* PHONES ===================================== */
+
+@media (max-width: 565px){
+    nav ul li a{
+        font-size: 1em;
+    }
+    #whoami #eme{
+        margin: 0px 0px 0px 5%;
+        font-size:4vw;
+    }
+    #contact .form-contain {
+        width: 80%;
+    }
+
 }
 
-#about {
-    margin:20vh 0 0 0;
-    padding:50px;
-    width: 100%;
-    background-color:#232323;
-    color:white;
-    padding: 20vh 10vh;
-    min-height:100vh;
+/* PHONES END -===============================*/
+/* TABLET ++ ===========================*/
+
+@media (max-width: 1024px){
+    #knowledge .content {
+        width: 40vw;  
+    }
 }
-#about h1 {
-    text-align: center;
-    font-size:300%;
-    margin-bottom:30px;
-}
-#about p {
-    padding: 5px 0px;
-    font-size: 120%;
-    margin:0 !important;
-    text-indent: 2em;
-    text-align: justify;
-    font-family: 'Open Sans', sans-serif;
-}
-#about p img {
-    float:left;
-    width:300px;
-    margin-right: 30px;
-}
+
+/* TABLET END ++ ===========================*/

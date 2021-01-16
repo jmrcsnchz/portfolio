@@ -13,3 +13,8 @@ new TypeIt("#eme", {
 .move('END')
 .type(" from Philippines ", {delay: 100})
 .go(); 
+
+$('nav .checkbtn').click(function() {
+    $('#display_advance').toggle('1000');
+    $("i", this).toggleClass("fa fa-bars fa fa-times");
+});
